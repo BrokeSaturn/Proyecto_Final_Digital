@@ -1,7 +1,13 @@
 #include <LiquidCrystal.h>
 #include <Servo.h>
 
-LiquidCrystal lcd(8, 9, 10, 11, 12, 13);
+// LCD1: velocidad + inclinacion  | RS=8  E=9   D4-D7 = 10,11,12,13 (bus compartido)
+// LCD2: tiempo + distancia       | RS=36 E=38  D4-D7 = 10,11,12,13
+// LCD3: kcal + faltan            | RS=46 E=48  D4-D7 = 10,11,12,13
+LiquidCrystal lcd1(8, 9, 10, 11, 12, 13);
+LiquidCrystal lcd2(36, 38, 10, 11, 12, 13);
+LiquidCrystal lcd3(46, 48, 10, 11, 12, 13);
+
 Servo servoInc;
 
 const uint8_t BTN_START  = 22;
@@ -9,7 +15,7 @@ const uint8_t BTN_VEL_UP = 24;
 const uint8_t BTN_VEL_DN = 26;
 const uint8_t BTN_INC_UP = 28;
 const uint8_t BTN_INC_DN = 30;
-const uint8_t BTN_PAGE   = 32;
+const uint8_t BTN_PAGE   = 32; // ya no cambia pantalla, libre para uso futuro
 const uint8_t SW_PARO    = 34;
 const uint8_t SENS_PASO  = 2;
 
@@ -24,6 +30,7 @@ const uint8_t POT_PESO   = A0;
 const float VEL_MAX = 16.0;
 const float VEL_PASO = 0.5;
 const uint8_t INC_MAX = 15;
+const unsigned long RESET_HOLD_MS = 2000;
 
 float velocidad = 0.0;
 uint8_t inclinacion = 0;
@@ -35,9 +42,11 @@ unsigned long tiempo = 0;
 volatile unsigned long pasos = 0;
 
 bool enMarcha = false;
-uint8_t pagina = 0;
 
-unsigned long tFisica = 0, tLcd = 0, tBtn = 0;
+unsigned long tFisica = 0, tLcd1 = 0, tLcd2 = 0, tLcd3 = 0, tBtn = 0;
+unsigned long tParoPress = 0;
+bool paroPresionado = false;
+bool resetHecho = false;
 
 void contarPaso() {
   static unsigned long ult = 0;
@@ -65,13 +74,18 @@ void setup() {
 
   attachInterrupt(digitalPinToInterrupt(SENS_PASO), contarPaso, FALLING);
 
-  lcd.begin(16, 2);
-  lcd.print("CAMINADORA ESPE");
-  lcd.setCursor(0, 1);
-  lcd.print("Iniciando...");
+  lcd1.begin(16, 2);
+  lcd2.begin(16, 2);
+  lcd3.begin(16, 2);
+
+  lcd1.print("CAMINADORA ESPE");
+  lcd1.setCursor(0, 1);
+  lcd1.print("Iniciando...");
   digitalWrite(LED_PARO, HIGH);
   delay(1500);
-  lcd.clear();
+  lcd1.clear();
+  lcd2.clear();
+  lcd3.clear();
 }
 
 float kcalPorMinuto() {
@@ -101,13 +115,42 @@ void detener() {
   beep(600, 250);
 }
 
-void leerBotones() {
-  if (millis() - tBtn < 180) return;
+void reiniciarCaminadora() {
+  detener();
+  distancia = 0.0;
+  kcal = 0.0;
+  metaKcal = 300.0;
+  tiempo = 0;
+  pasos = 0;
+  inclinacion = 0;
+  servoInc.write(0);
+  beep(2200, 150);
+  delay(180);
+  beep(2200, 150);
+  lcd1.clear();
+  lcd2.clear();
+  lcd3.clear();
+}
 
+void leerBotones() {
+  // --- Manejo de SW_PARO: paro inmediato + reset por presion larga (2 s) ---
   if (digitalRead(SW_PARO) == LOW) {
-    if (enMarcha) { detener(); tBtn = millis(); }
-    return;
+    if (!paroPresionado) {
+      paroPresionado = true;
+      tParoPress = millis();
+      resetHecho = false;
+      if (enMarcha) detener();
+    } else if (!resetHecho && millis() - tParoPress >= RESET_HOLD_MS) {
+      reiniciarCaminadora();
+      resetHecho = true;
+    }
+    return; // mientras este activado, no se procesan otros botones
+  } else {
+    paroPresionado = false;
+    resetHecho = false;
   }
+
+  if (millis() - tBtn < 180) return;
 
   if (digitalRead(BTN_START) == LOW) {
     if (enMarcha) detener(); else arrancar();
@@ -132,11 +175,6 @@ void leerBotones() {
     if (inclinacion > 0) inclinacion--;
     beep(1200, 60);
     tBtn = millis();
-  }
-  else if (digitalRead(BTN_PAGE) == LOW) {
-    pagina = (pagina + 1) % 3;
-    tBtn = millis();
-    lcd.clear();
   }
 }
 
@@ -166,42 +204,52 @@ void actualizarFisica() {
   }
 }
 
-void mostrarLcd() {
-  if (millis() - tLcd < 300) return;
-  tLcd = millis();
+void mostrarLcd1() {
+  if (millis() - tLcd1 < 300) return;
+  tLcd1 = millis();
 
   char l1[17], l2[17];
-  unsigned long seg = tiempo / 1000;
+  dtostrf(velocidad, 4, 1, l1);
+  lcd1.setCursor(0, 0);
+  lcd1.print("VEL "); lcd1.print(l1); lcd1.print(" km/h ");
+  lcd1.setCursor(0, 1);
+  sprintf(l2, "INC %2u%%  %s", inclinacion, enMarcha ? "MARCHA" : "PARADO");
+  lcd1.print(l2); lcd1.print("  ");
+}
 
-  if (pagina == 0) {
-    dtostrf(velocidad, 4, 1, l1);
-    lcd.setCursor(0, 0);
-    lcd.print("VEL "); lcd.print(l1); lcd.print(" km/h ");
-    lcd.setCursor(0, 1);
-    sprintf(l2, "INC %2u%%  %s", inclinacion, enMarcha ? "MARCHA" : "PARADO");
-    lcd.print(l2); lcd.print("  ");
-  }
-  else if (pagina == 1) {
-    sprintf(l1, "TIEMPO %02lu:%02lu:%02lu", seg / 3600, (seg % 3600) / 60, seg % 60);
-    lcd.setCursor(0, 0); lcd.print(l1);
-    char d[8]; dtostrf(distancia, 5, 2, d);
-    lcd.setCursor(0, 1);
-    lcd.print("DIST "); lcd.print(d); lcd.print(" km ");
-  }
-  else {
-    char k[8]; dtostrf(kcal, 5, 1, k);
-    lcd.setCursor(0, 0);
-    lcd.print("KCAL "); lcd.print(k); lcd.print("     ");
-    float falta = metaKcal - kcal;
-    if (falta < 0) falta = 0;
-    char f[8]; dtostrf(falta, 5, 1, f);
-    lcd.setCursor(0, 1);
-    lcd.print("FALTAN "); lcd.print(f); lcd.print("  ");
-  }
+void mostrarLcd2() {
+  if (millis() - tLcd2 < 300) return;
+  tLcd2 = millis();
+
+  char l1[17];
+  unsigned long seg = tiempo / 1000;
+  sprintf(l1, "TIEMPO %02lu:%02lu:%02lu", seg / 3600, (seg % 3600) / 60, seg % 60);
+  lcd2.setCursor(0, 0); lcd2.print(l1);
+
+  char d[8]; dtostrf(distancia, 5, 2, d);
+  lcd2.setCursor(0, 1);
+  lcd2.print("DIST "); lcd2.print(d); lcd2.print(" km ");
+}
+
+void mostrarLcd3() {
+  if (millis() - tLcd3 < 300) return;
+  tLcd3 = millis();
+
+  char k[8]; dtostrf(kcal, 5, 1, k);
+  lcd3.setCursor(0, 0);
+  lcd3.print("KCAL "); lcd3.print(k); lcd3.print("     ");
+
+  float falta = metaKcal - kcal;
+  if (falta < 0) falta = 0;
+  char f[8]; dtostrf(falta, 5, 1, f);
+  lcd3.setCursor(0, 1);
+  lcd3.print("FALTAN "); lcd3.print(f); lcd3.print("  ");
 }
 
 void loop() {
   leerBotones();
   actualizarFisica();
-  mostrarLcd();
+  mostrarLcd1();
+  mostrarLcd2();
+  mostrarLcd3();
 }
