@@ -17,6 +17,7 @@ const uint8_t BTN_INC_UP = 28;
 const uint8_t BTN_INC_DN = 30;
 const uint8_t BTN_PAGE   = 32; // ya no cambia pantalla, libre para uso futuro
 const uint8_t SW_PARO    = 34;
+const uint8_t SW_GENERAL = 3; // Switch principal de encendido/apagado
 const uint8_t SENS_PASO  = 2;
 
 const uint8_t MOTOR_PWM  = 5;
@@ -42,6 +43,7 @@ unsigned long tiempo = 0;
 volatile unsigned long pasos = 0;
 
 bool enMarcha = false;
+bool sistemaEncendido = false; // Control de encendido general
 
 unsigned long tFisica = 0, tLcd1 = 0, tLcd2 = 0, tLcd3 = 0, tBtn = 0;
 unsigned long tParoPress = 0;
@@ -63,6 +65,7 @@ void setup() {
   pinMode(BTN_PAGE,   INPUT_PULLUP);
   pinMode(SW_PARO,    INPUT_PULLUP);
   pinMode(SENS_PASO,  INPUT_PULLUP);
+  pinMode(SW_GENERAL, INPUT);
 
   pinMode(MOTOR_PWM,  OUTPUT);
   pinMode(LED_MARCHA, OUTPUT);
@@ -78,11 +81,23 @@ void setup() {
   lcd2.begin(16, 2);
   lcd3.begin(16, 2);
 
+}
+
+void iniciarSistema() {
+  lcd1.clear(); lcd2.clear(); lcd3.clear();
   lcd1.print("CAMINADORA ESPE");
   lcd1.setCursor(0, 1);
   lcd1.print("Iniciando...");
   digitalWrite(LED_PARO, HIGH);
   delay(1500);
+  reiniciarCaminadora();
+}
+
+void apagarSistema() {
+  detener();
+  digitalWrite(LED_PARO, LOW);
+  digitalWrite(LED_MARCHA, LOW);
+  servoInc.write(0);
   lcd1.clear();
   lcd2.clear();
   lcd3.clear();
@@ -247,9 +262,22 @@ void mostrarLcd3() {
 }
 
 void loop() {
-  leerBotones();
-  actualizarFisica();
-  mostrarLcd1();
-  mostrarLcd2();
-  mostrarLcd3();
+  bool estadoSwitch = (digitalRead(SW_GENERAL) == HIGH);
+
+  if (estadoSwitch && !sistemaEncendido) {
+    sistemaEncendido = true;
+    iniciarSistema();
+  } 
+  else if (!estadoSwitch && sistemaEncendido) {
+    sistemaEncendido = false;
+    apagarSistema();
+  }
+
+  if (sistemaEncendido) {
+    leerBotones();
+    actualizarFisica();
+    mostrarLcd1();
+    mostrarLcd2();
+    mostrarLcd3();
+  }
 }
