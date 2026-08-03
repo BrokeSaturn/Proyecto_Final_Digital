@@ -15,6 +15,7 @@ const uint8_t BTN_INC_UP = 28;
 const uint8_t BTN_INC_DN = 30;
 const uint8_t SW_PARO    = 34;
 const uint8_t SENS_PASO  = 2;
+const uint8_t SW_POWER   = 3;
 
 const uint8_t MOTOR_PWM  = 5;
 const uint8_t SERVO_INC  = 6;
@@ -23,16 +24,15 @@ const uint8_t LED_PARO   = 42;
 const uint8_t BUZZER     = 44;
 const uint8_t POT_PESO   = A0;
 
-// --- Banda: 6 matrices Max72xx, DIN y SCK compartidos, un CS por matriz ---
+// --- Banda: 1 componente Max72xx de 10 modulos en cascada ---
 const uint8_t MAX_DIN = 23;
 const uint8_t MAX_SCK = 25;
-const uint8_t N_MATRICES = 6;
-const uint8_t MAX_CS[N_MATRICES] = { 27, 29, 31, 33, 35, 37 };
-const uint8_t N_MODULOS = 2;    // NumDisplays de cada matriz -> 16 px de ancho
-const uint8_t FILAS_TOTAL = N_MATRICES * 8;   // 48 px de alto
+const uint8_t MAX_CS  = 27;     // Conectar al CS de la matriz Max72xx_matrix-402
+const uint8_t N_MODULOS = 10;   // Tamaño 10 -> 80 px de ancho, 8 de alto
+const uint8_t FILAS_TOTAL = 8;
 
-const uint8_t PERIODO = 6;      // separacion entre lineas de la banda
-const uint8_t GROSOR  = 2;      // filas encendidas por linea
+const uint8_t PERIODO = 4;      // ajustado para 8 filas (se vera mejor)
+const uint8_t GROSOR  = 1;      // lineas mas finas
 const unsigned long BANDA_MS_MIN = 40;
 const unsigned long BANDA_MS_MAX = 400;
 
@@ -67,39 +67,34 @@ void contarPaso() {
 // ---------- Control MAX7219 por bit-bang ----------
 // Trama de 16 bits: 8 de direccion (registro) + 8 de dato, MSB primero.
 // Se repite una trama por cada modulo en cascada dentro de la misma matriz.
-void enviarMax(uint8_t cs, uint8_t reg, uint8_t dato) {
-  digitalWrite(cs, LOW);
+void enviarMax(uint8_t reg, uint8_t dato) {
+  digitalWrite(MAX_CS, LOW);
   for (uint8_t m = 0; m < N_MODULOS; m++) {
     shiftOut(MAX_DIN, MAX_SCK, MSBFIRST, reg);
     shiftOut(MAX_DIN, MAX_SCK, MSBFIRST, dato);
   }
-  digitalWrite(cs, HIGH);
+  digitalWrite(MAX_CS, HIGH);
 }
 
-void initMax(uint8_t cs) {
-  enviarMax(cs, 0x0F, 0x00);  // display test apagado
-  enviarMax(cs, 0x09, 0x00);  // sin decodificacion BCD
-  enviarMax(cs, 0x0B, 0x07);  // scan limit: las 8 filas
-  enviarMax(cs, 0x0A, 0x08);  // intensidad media
-  enviarMax(cs, 0x0C, 0x01);  // salir de shutdown
+void initMax() {
+  enviarMax(0x0F, 0x00);  // display test apagado
+  enviarMax(0x09, 0x00);  // sin decodificacion BCD
+  enviarMax(0x0B, 0x07);  // scan limit: las 8 filas
+  enviarMax(0x0A, 0x08);  // intensidad media
+  enviarMax(0x0C, 0x01);  // salir de shutdown
 }
 
 void limpiarBanda() {
-  for (uint8_t i = 0; i < N_MATRICES; i++)
-    for (uint8_t r = 1; r <= 8; r++)
-      enviarMax(MAX_CS[i], r, 0x00);
+  for (uint8_t r = 1; r <= 8; r++) {
+    enviarMax(r, 0x00);
+  }
 }
 
-// Dibuja lineas horizontales segun la fase actual.
-// El registro de digito del MAX7219 equivale a una FILA, y sus 8 bits a las
-// columnas: por eso una linea completa es simplemente 0xFF.
+// Dibuja lineas horizontales simulando la cinta moviendose.
 void dibujarBanda() {
-  for (uint8_t i = 0; i < N_MATRICES; i++) {
-    for (uint8_t r = 0; r < 8; r++) {
-      uint8_t filaGlobal = i * 8 + r;
-      uint8_t v = (((filaGlobal + fase) % PERIODO) < GROSOR) ? 0xFF : 0x00;
-      enviarMax(MAX_CS[i], r + 1, v);
-    }
+  for (uint8_t r = 0; r < 8; r++) {
+    uint8_t v = (((r + fase) % PERIODO) < GROSOR) ? 0xFF : 0x00;
+    enviarMax(r + 1, v);
   }
 }
 
@@ -130,6 +125,7 @@ void setup() {
   pinMode(BTN_INC_DN, INPUT_PULLUP);
   pinMode(SW_PARO,    INPUT_PULLUP);
   pinMode(SENS_PASO,  INPUT_PULLUP);
+  pinMode(SW_POWER,   INPUT_PULLUP);
 
   pinMode(MOTOR_PWM,  OUTPUT);
   pinMode(SERVO_INC,  OUTPUT);
@@ -140,11 +136,9 @@ void setup() {
   pinMode(MAX_DIN, OUTPUT);
   pinMode(MAX_SCK, OUTPUT);
   digitalWrite(MAX_SCK, LOW);
-  for (uint8_t i = 0; i < N_MATRICES; i++) {
-    pinMode(MAX_CS[i], OUTPUT);
-    digitalWrite(MAX_CS[i], HIGH);
-  }
-  for (uint8_t i = 0; i < N_MATRICES; i++) initMax(MAX_CS[i]);
+  pinMode(MAX_CS, OUTPUT);
+  digitalWrite(MAX_CS, HIGH);
+  initMax();
   dibujarBanda();
 
   servoInc.attach(SERVO_INC);
@@ -312,6 +306,39 @@ void mostrarLcd3() {
 }
 
 void loop() {
+  static bool ultimoEstadoEncendido = true;
+  // HIGH significa que el interruptor envia 5V (Encendido)
+  bool estadoEncendido = (digitalRead(SW_POWER) == HIGH); 
+
+  if (!estadoEncendido) {
+    if (ultimoEstadoEncendido) {
+      // Transicion de Encendido a Apagado
+      if (enMarcha) detener();
+      lcd1.clear();
+      lcd2.clear();
+      lcd3.clear();
+      limpiarBanda();
+      digitalWrite(LED_PARO, LOW);
+      digitalWrite(LED_MARCHA, LOW);
+      ultimoEstadoEncendido = false;
+    }
+    // No hacer nada mas mientras este apagada la maquina
+    return;
+  } else {
+    if (!ultimoEstadoEncendido) {
+      // Transicion de Apagado a Encendido
+      lcd1.setCursor(0, 0); lcd1.print("CAMINADORA ESPE");
+      lcd1.setCursor(0, 1); lcd1.print("Iniciando...");
+      digitalWrite(LED_PARO, HIGH);
+      delay(1500);
+      lcd1.clear();
+      lcd2.clear();
+      lcd3.clear();
+      dibujarBanda();
+      ultimoEstadoEncendido = true;
+    }
+  }
+
   leerBotones();
   actualizarFisica();
   mostrarLcd1();

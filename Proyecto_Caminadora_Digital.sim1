@@ -1,83 +1,44 @@
 <circuit version="1.1.0-SR2" rev="260312" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
 
-
 <item itemtype="Subcircuit" CircId="Mega-1" mainComp="false" Show_id="true" Show_Val="false" Pos="324,-104" rotation="0" hflip="1" vflip="1" label="Mega-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false">
 <mainCompProps MainCompId="mega2560-63" Frequency="16 MHz" Program="codigo_caminadora/build/arduino.avr.mega/codigo_caminadora.ino.hex" Auto_Load="false" saveEepr="true" MainMcu="true" SerialMon="-1" />
 </item>
 
-<item itemtype="Tunnel" CircId="Tunnel-40" mainComp="false" Show_id="false" Show_Val="false" Pos="182,-342" rotation="0" hflip="1" vflip="1" label="Tunnel-40" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LCD_RS" IsBus="false" />
-
 <item itemtype="Tunnel" CircId="Tunnel-41" mainComp="false" Show_id="false" Show_Val="false" Pos="242,-274" rotation="0" hflip="1" vflip="1" label="Tunnel-41" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LCD_RS" IsBus="false" />
-
-<item itemtype="Tunnel" CircId="Tunnel-42" mainComp="false" Show_id="false" Show_Val="false" Pos="174,-312" rotation="0" hflip="1" vflip="1" label="Tunnel-42" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LCD_E" IsBus="false" />
 
 <item itemtype="Tunnel" CircId="Tunnel-43" mainComp="false" Show_id="false" Show_Val="false" Pos="242,-248" rotation="0" hflip="1" vflip="1" label="Tunnel-43" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LCD_E" IsBus="false" />
 
-<item itemtype="Tunnel" CircId="Tunnel-44" mainComp="false" Show_id="false" Show_Val="false" Pos="174,-286" rotation="0" hflip="1" vflip="1" label="Tunnel-44" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LCD_D4" IsBus="false" />
-
 <item itemtype="Tunnel" CircId="Tunnel-45" mainComp="false" Show_id="false" Show_Val="false" Pos="242,-222" rotation="0" hflip="1" vflip="1" label="Tunnel-45" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LCD_D4" IsBus="false" />
-
-<item itemtype="Tunnel" CircId="Tunnel-46" mainComp="false" Show_id="false" Show_Val="false" Pos="174,-260" rotation="0" hflip="1" vflip="1" label="Tunnel-46" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LCD_D5" IsBus="false" />
 
 <item itemtype="Tunnel" CircId="Tunnel-47" mainComp="false" Show_id="false" Show_Val="false" Pos="242,-196" rotation="0" hflip="1" vflip="1" label="Tunnel-47" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LCD_D5" IsBus="false" />
 
-<item itemtype="Tunnel" CircId="Tunnel-48" mainComp="false" Show_id="false" Show_Val="false" Pos="174,-234" rotation="0" hflip="1" vflip="1" label="Tunnel-48" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LCD_D6" IsBus="false" />
-
 <item itemtype="Tunnel" CircId="Tunnel-49" mainComp="false" Show_id="false" Show_Val="false" Pos="242,-170" rotation="0" hflip="1" vflip="1" label="Tunnel-49" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LCD_D6" IsBus="false" />
-
-<item itemtype="Tunnel" CircId="Tunnel-50" mainComp="false" Show_id="false" Show_Val="false" Pos="174,-208" rotation="0" hflip="1" vflip="1" label="Tunnel-50" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LCD_D7" IsBus="false" />
 
 <item itemtype="Tunnel" CircId="Tunnel-51" mainComp="false" Show_id="false" Show_Val="false" Pos="242,-144" rotation="0" hflip="1" vflip="1" label="Tunnel-51" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LCD_D7" IsBus="false" />
 
-<item itemtype="Tunnel" CircId="Tunnel-52" mainComp="false" Show_id="false" Show_Val="false" Pos="178,-182" rotation="0" hflip="1" vflip="1" label="Tunnel-52" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="BT_START" IsBus="false" />
-
 <item itemtype="Tunnel" CircId="Tunnel-53" mainComp="false" Show_id="false" Show_Val="false" Pos="242,-118" rotation="0" hflip="1" vflip="1" label="Tunnel-53" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="BT_START" IsBus="false" />
-
-<item itemtype="Tunnel" CircId="Tunnel-54" mainComp="false" Show_id="false" Show_Val="false" Pos="174,-156" rotation="0" hflip="1" vflip="1" label="Tunnel-54" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="BT_VEL_UP" IsBus="false" />
 
 <item itemtype="Tunnel" CircId="Tunnel-55" mainComp="false" Show_id="false" Show_Val="false" Pos="242,-92" rotation="0" hflip="1" vflip="1" label="Tunnel-55" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="BT_VEL_UP" IsBus="false" />
 
-<item itemtype="Tunnel" CircId="Tunnel-56" mainComp="false" Show_id="false" Show_Val="false" Pos="174,-130" rotation="0" hflip="1" vflip="1" label="Tunnel-56" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="BT_VEL_DN" IsBus="false" />
-
 <item itemtype="Tunnel" CircId="Tunnel-57" mainComp="false" Show_id="false" Show_Val="false" Pos="242,-66" rotation="0" hflip="1" vflip="1" label="Tunnel-57" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="BT_VEL_DN" IsBus="false" />
-
-<item itemtype="Tunnel" CircId="Tunnel-58" mainComp="false" Show_id="false" Show_Val="false" Pos="174,-104" rotation="0" hflip="1" vflip="1" label="Tunnel-58" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="BT_INC_UP" IsBus="false" />
 
 <item itemtype="Tunnel" CircId="Tunnel-59" mainComp="false" Show_id="false" Show_Val="false" Pos="242,-40" rotation="0" hflip="1" vflip="1" label="Tunnel-59" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="BT_INC_UP" IsBus="false" />
 
-<item itemtype="Tunnel" CircId="Tunnel-60" mainComp="false" Show_id="false" Show_Val="false" Pos="174,-78" rotation="0" hflip="1" vflip="1" label="Tunnel-60" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="BT_INC_DN" IsBus="false" />
-
 <item itemtype="Tunnel" CircId="Tunnel-61" mainComp="false" Show_id="false" Show_Val="false" Pos="242,-14" rotation="0" hflip="1" vflip="1" label="Tunnel-61" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="BT_INC_DN" IsBus="false" />
-
-<item itemtype="Tunnel" CircId="Tunnel-62" mainComp="false" Show_id="false" Show_Val="false" Pos="174,-52" rotation="0" hflip="1" vflip="1" label="Tunnel-62" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="BT_PAGE" IsBus="false" />
 
 <item itemtype="Tunnel" CircId="Tunnel-63" mainComp="false" Show_id="false" Show_Val="false" Pos="242,12" rotation="0" hflip="1" vflip="1" label="Tunnel-63" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="BT_PAGE" IsBus="false" />
 
-<item itemtype="Tunnel" CircId="Tunnel-64" mainComp="false" Show_id="false" Show_Val="false" Pos="174,-26" rotation="0" hflip="1" vflip="1" label="Tunnel-64" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="SW_PARO" IsBus="false" />
-
 <item itemtype="Tunnel" CircId="Tunnel-65" mainComp="false" Show_id="false" Show_Val="false" Pos="242,38" rotation="0" hflip="1" vflip="1" label="Tunnel-65" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="SW_PARO" IsBus="false" />
-
-<item itemtype="Tunnel" CircId="Tunnel-66" mainComp="false" Show_id="false" Show_Val="false" Pos="174,0" rotation="0" hflip="1" vflip="1" label="Tunnel-66" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="SENS_PASO" IsBus="false" />
 
 <item itemtype="Tunnel" CircId="Tunnel-67" mainComp="false" Show_id="false" Show_Val="false" Pos="242,64" rotation="0" hflip="1" vflip="1" label="Tunnel-67" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="SENS_PASO" IsBus="false" />
 
-<item itemtype="Tunnel" CircId="Tunnel-68" mainComp="false" Show_id="false" Show_Val="false" Pos="174,26" rotation="0" hflip="1" vflip="1" label="Tunnel-68" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MOT_PWM" IsBus="false" />
-
 <item itemtype="Tunnel" CircId="Tunnel-69" mainComp="false" Show_id="false" Show_Val="false" Pos="242,90" rotation="0" hflip="1" vflip="1" label="Tunnel-69" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MOT_PWM" IsBus="false" />
-
-<item itemtype="Tunnel" CircId="Tunnel-70" mainComp="false" Show_id="false" Show_Val="false" Pos="174,52" rotation="0" hflip="1" vflip="1" label="Tunnel-70" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="SRV_INC" IsBus="false" />
 
 <item itemtype="Tunnel" CircId="Tunnel-71" mainComp="false" Show_id="false" Show_Val="false" Pos="242,116" rotation="0" hflip="1" vflip="1" label="Tunnel-71" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="SRV_INC" IsBus="false" />
 
-<item itemtype="Tunnel" CircId="Tunnel-72" mainComp="false" Show_id="false" Show_Val="false" Pos="174,78" rotation="0" hflip="1" vflip="1" label="Tunnel-72" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LED_ON" IsBus="false" />
-
 <item itemtype="Tunnel" CircId="Tunnel-73" mainComp="false" Show_id="false" Show_Val="false" Pos="242,142" rotation="0" hflip="1" vflip="1" label="Tunnel-73" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LED_ON" IsBus="false" />
 
-<item itemtype="Tunnel" CircId="Tunnel-74" mainComp="false" Show_id="false" Show_Val="false" Pos="174,104" rotation="0" hflip="1" vflip="1" label="Tunnel-74" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LED_OFF" IsBus="false" />
-
 <item itemtype="Tunnel" CircId="Tunnel-75" mainComp="false" Show_id="false" Show_Val="false" Pos="242,168" rotation="0" hflip="1" vflip="1" label="Tunnel-75" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LED_OFF" IsBus="false" />
-
-<item itemtype="Tunnel" CircId="Tunnel-76" mainComp="false" Show_id="false" Show_Val="false" Pos="174,130" rotation="0" hflip="1" vflip="1" label="Tunnel-76" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="BUZZ" IsBus="false" />
 
 <item itemtype="Tunnel" CircId="Tunnel-77" mainComp="false" Show_id="false" Show_Val="false" Pos="242,194" rotation="0" hflip="1" vflip="1" label="Tunnel-77" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="BUZZ" IsBus="false" />
 
@@ -229,7 +190,79 @@
 
 <item itemtype="Image" CircId="216" mainComp="false" Show_id="false" Show_Val="false" Pos="-428.299,24" rotation="0" hflip="1" vflip="1" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" H_size="700 _px" V_size="300 _px" Border="2 _px" Z_Value="-1" Color="#a0a0a4" Opacity="1" Image_File="src/Gemini_Generated_Image_pvxryapvxryapvxr.png" />
 
+<item itemtype="Max72xx_matrix" CircId="Max72xx_matrix-400" mainComp="false" Show_id="false" Show_Val="false" Pos="-714,400" rotation="0" hflip="1" vflip="1" label="Max72xx_matrix-400" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="White" NumDisplays="10" />
 
+<item itemtype="Tunnel" CircId="Tunnel-400" mainComp="false" Show_id="false" Show_Val="false" Pos="-792,452" rotation="-90" hflip="1" vflip="1" label="Tunnel-400" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_SCK" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-401" mainComp="false" Show_id="false" Show_Val="false" Pos="-780,452" rotation="-90" hflip="1" vflip="1" label="Tunnel-401" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_DIN" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-402" mainComp="false" Show_id="false" Show_Val="false" Pos="-770,452" rotation="-90" hflip="1" vflip="1" label="Tunnel-402" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS1" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-403" mainComp="false" Show_id="false" Show_Val="false" Pos="346,-172" rotation="0" hflip="1" vflip="1" label="Tunnel-403" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS1" IsBus="false" />
+
+<item itemtype="Max72xx_matrix" CircId="Max72xx_matrix-401" mainComp="false" Show_id="false" Show_Val="false" Pos="-714,488" rotation="0" hflip="1" vflip="1" label="Max72xx_matrix-401" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="White" NumDisplays="10" />
+
+<item itemtype="Tunnel" CircId="Tunnel-404" mainComp="false" Show_id="false" Show_Val="false" Pos="-792,540" rotation="-90" hflip="1" vflip="1" label="Tunnel-404" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_SCK" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-405" mainComp="false" Show_id="false" Show_Val="false" Pos="-780,540" rotation="-90" hflip="1" vflip="1" label="Tunnel-405" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_DIN" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-407" mainComp="false" Show_id="false" Show_Val="false" Pos="182,-148" rotation="0" hflip="1" vflip="1" label="Tunnel-407" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS2" IsBus="false" />
+
+<item itemtype="Max72xx_matrix" CircId="Max72xx_matrix-402" mainComp="false" Show_id="false" Show_Val="false" Pos="-714,312" rotation="0" hflip="1" vflip="1" label="Max72xx_matrix-402" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="White" NumDisplays="10" />
+
+<item itemtype="Tunnel" CircId="Tunnel-408" mainComp="false" Show_id="false" Show_Val="false" Pos="-792,364" rotation="-90" hflip="1" vflip="1" label="Tunnel-408" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_SCK" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-409" mainComp="false" Show_id="false" Show_Val="false" Pos="-780,364" rotation="-90" hflip="1" vflip="1" label="Tunnel-409" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_DIN" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-411" mainComp="false" Show_id="false" Show_Val="false" Pos="182,-116" rotation="0" hflip="1" vflip="1" label="Tunnel-411" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS3" IsBus="false" />
+
+<item itemtype="Max72xx_matrix" CircId="Max72xx_matrix-403" mainComp="false" Show_id="false" Show_Val="false" Pos="-714,576" rotation="0" hflip="1" vflip="1" label="Max72xx_matrix-403" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="White" NumDisplays="10" />
+
+<item itemtype="Tunnel" CircId="Tunnel-412" mainComp="false" Show_id="false" Show_Val="false" Pos="-792,628" rotation="-90" hflip="1" vflip="1" label="Tunnel-412" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_SCK" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-413" mainComp="false" Show_id="false" Show_Val="false" Pos="-780,628" rotation="-90" hflip="1" vflip="1" label="Tunnel-413" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_DIN" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-415" mainComp="false" Show_id="false" Show_Val="false" Pos="182,-88" rotation="0" hflip="1" vflip="1" label="Tunnel-415" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS4" IsBus="false" />
+
+<item itemtype="Max72xx_matrix" CircId="Max72xx_matrix-404" mainComp="false" Show_id="false" Show_Val="false" Pos="-714,664" rotation="0" hflip="1" vflip="1" label="Max72xx_matrix-404" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="White" NumDisplays="10" />
+
+<item itemtype="Tunnel" CircId="Tunnel-416" mainComp="false" Show_id="false" Show_Val="false" Pos="-788,716" rotation="-90" hflip="1" vflip="1" label="Tunnel-416" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_SCK" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-417" mainComp="false" Show_id="false" Show_Val="false" Pos="-776,716" rotation="-90" hflip="1" vflip="1" label="Tunnel-417" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_DIN" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-419" mainComp="false" Show_id="false" Show_Val="false" Pos="182,-60" rotation="0" hflip="1" vflip="1" label="Tunnel-419" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS5" IsBus="false" />
+
+<item itemtype="Max72xx_matrix" CircId="Max72xx_matrix-405" mainComp="false" Show_id="false" Show_Val="false" Pos="-714,752" rotation="0" hflip="1" vflip="1" label="Max72xx_matrix-405" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="White" NumDisplays="10" />
+
+<item itemtype="Tunnel" CircId="Tunnel-420" mainComp="false" Show_id="false" Show_Val="false" Pos="-788,804" rotation="-90" hflip="1" vflip="1" label="Tunnel-420" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_SCK" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-421" mainComp="false" Show_id="false" Show_Val="false" Pos="-776,804" rotation="-90" hflip="1" vflip="1" label="Tunnel-421" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_DIN" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-423" mainComp="false" Show_id="false" Show_Val="false" Pos="182,-28" rotation="0" hflip="1" vflip="1" label="Tunnel-423" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS6" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-424" mainComp="false" Show_id="false" Show_Val="false" Pos="338,208" rotation="0" hflip="1" vflip="1" label="Tunnel-424" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_DIN" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-425" mainComp="false" Show_id="false" Show_Val="false" Pos="338,230" rotation="0" hflip="1" vflip="1" label="Tunnel-425" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_SCK" IsBus="false" />
+
+<item itemtype="Push" CircId="Push-30" mainComp="false" Show_id="false" Show_Val="false" Pos="-700,110" rotation="0" hflip="1" vflip="1" label="Push-30" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1" />
+
+<item itemtype="Tunnel" CircId="Tunnel-426" mainComp="false" Show_id="false" Show_Val="false" Pos="-772,110" rotation="0" hflip="1" vflip="1" label="Tunnel-426" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="SENS_PASO" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-427" mainComp="false" Show_id="false" Show_Val="false" Pos="-628,110" rotation="0" hflip="1" vflip="1" label="Tunnel-427" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="GND" IsBus="false" />
+
+<item itemtype="Image" CircId="428" mainComp="false" Show_id="false" Show_Val="false" Pos="-430.448,373.582" rotation="0" hflip="1" vflip="1" label="Image-428" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" H_size="700 _px" V_size="895 _px" Border="2 _px" Z_Value="-3" Color="#a0a0a4" Opacity="1" Image_File="../../../Downloads/Gemini_Generated_Image_snnir5snnir5snni.png" />
+
+<item itemtype="Tunnel" CircId="Tunnel-429" mainComp="false" Show_id="false" Show_Val="false" Pos="-770,364" rotation="-90" hflip="1" vflip="1" label="Tunnel-429" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS1" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-430" mainComp="false" Show_id="false" Show_Val="false" Pos="-770,540" rotation="-90" hflip="1" vflip="1" label="Tunnel-430" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS1" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-431" mainComp="false" Show_id="false" Show_Val="false" Pos="-770,628" rotation="-90" hflip="1" vflip="1" label="Tunnel-431" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS1" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-432" mainComp="false" Show_id="false" Show_Val="false" Pos="-766,716" rotation="-90" hflip="1" vflip="1" label="Tunnel-432" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS1" IsBus="false" />
+
+<item itemtype="Tunnel" CircId="Tunnel-433" mainComp="false" Show_id="false" Show_Val="false" Pos="-766,804" rotation="-90" hflip="1" vflip="1" label="Tunnel-433" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS1" IsBus="false" />
+
+<item itemtype="Image" CircId="434" mainComp="false" Show_id="false" Show_Val="false" Pos="-430.188,207.65" rotation="0" hflip="1" vflip="1" label="Image-434" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" H_size="625 _px" V_size="70 _px" Border="2 _px" Z_Value="-1" Color="#a0a0a4" Opacity="1" Image_File="../../../Pictures/Screenshots/Captura de pantalla 2026-08-02 230156.png" />
 
 <item itemtype="Connector" uid="connector-4" startpinid="Mega-1-9" endpinid="Tunnel-43-pin" pointList="332,96,248,96,248,-248,244,-248" />
 
@@ -381,133 +414,60 @@
 
 <item itemtype="Connector" uid="Connector-178" startpinid="Mega-1-13" endpinid="Tunnel-51-pin" pointList="332,128,248,128,248,-144,244,-144" />
 
+<item itemtype="Connector" uid="connector-400" startpinid="Max72xx_matrix-400PinSck" endpinid="Tunnel-400-pin" pointList="-742,452,-792,452" />
 
+<item itemtype="Connector" uid="connector-401" startpinid="Max72xx_matrix-400PinDin" endpinid="Tunnel-401-pin" pointList="-734,452,-780,452" />
 
+<item itemtype="Connector" uid="connector-403" startpinid="Mega-1-27" endpinid="Tunnel-403-pin" pointList="356,-88,356,-172,348,-172" />
 
-<item itemtype="Max72xx_matrix" CircId="Max72xx_matrix-400" mainComp="false" Show_id="false" Show_Val="false" Pos="-1150,-600" rotation="0" hflip="1" vflip="1" label="Max72xx_matrix-400" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Red" NumDisplays="2" />
+<item itemtype="Connector" uid="connector-404" startpinid="Max72xx_matrix-401PinSck" endpinid="Tunnel-404-pin" pointList="-742,540,-792,540" />
 
-<item itemtype="Tunnel" CircId="Tunnel-400" mainComp="false" Show_id="false" Show_Val="false" Pos="-1260,-500" rotation="0" hflip="1" vflip="1" label="Tunnel-400" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_SCK" IsBus="false" />
+<item itemtype="Connector" uid="connector-405" startpinid="Max72xx_matrix-401PinDin" endpinid="Tunnel-405-pin" pointList="-734,540,-780,540" />
 
-<item itemtype="Tunnel" CircId="Tunnel-401" mainComp="false" Show_id="false" Show_Val="false" Pos="-1220,-492" rotation="0" hflip="1" vflip="1" label="Tunnel-401" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_DIN" IsBus="false" />
+<item itemtype="Connector" uid="connector-407" startpinid="Mega-1-29" endpinid="Tunnel-407-pin" pointList="364,-88,184,-88,184,-148" />
 
-<item itemtype="Tunnel" CircId="Tunnel-402" mainComp="false" Show_id="false" Show_Val="false" Pos="-1110,-500" rotation="0" hflip="1" vflip="1" label="Tunnel-402" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS1" IsBus="false" />
+<item itemtype="Connector" uid="connector-408" startpinid="Max72xx_matrix-402PinSck" endpinid="Tunnel-408-pin" pointList="-742,364,-792,364" />
 
-<item itemtype="Tunnel" CircId="Tunnel-403" mainComp="false" Show_id="false" Show_Val="false" Pos="-90,-580" rotation="0" hflip="1" vflip="1" label="Tunnel-403" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS1" IsBus="false" />
+<item itemtype="Connector" uid="connector-409" startpinid="Max72xx_matrix-402PinDin" endpinid="Tunnel-409-pin" pointList="-734,364,-780,364" />
 
-<item itemtype="Max72xx_matrix" CircId="Max72xx_matrix-401" mainComp="false" Show_id="false" Show_Val="false" Pos="-1150,-440" rotation="0" hflip="1" vflip="1" label="Max72xx_matrix-401" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Red" NumDisplays="2" />
+<item itemtype="Connector" uid="connector-411" startpinid="Mega-1-31" endpinid="Tunnel-411-pin" pointList="372,-88,184,-88,184,-116" />
 
-<item itemtype="Tunnel" CircId="Tunnel-404" mainComp="false" Show_id="false" Show_Val="false" Pos="-1260,-340" rotation="0" hflip="1" vflip="1" label="Tunnel-404" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_SCK" IsBus="false" />
+<item itemtype="Connector" uid="connector-412" startpinid="Max72xx_matrix-403PinSck" endpinid="Tunnel-412-pin" pointList="-742,628,-792,628" />
 
-<item itemtype="Tunnel" CircId="Tunnel-405" mainComp="false" Show_id="false" Show_Val="false" Pos="-1220,-332" rotation="0" hflip="1" vflip="1" label="Tunnel-405" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_DIN" IsBus="false" />
+<item itemtype="Connector" uid="connector-413" startpinid="Max72xx_matrix-403PinDin" endpinid="Tunnel-413-pin" pointList="-734,628,-780,628" />
 
-<item itemtype="Tunnel" CircId="Tunnel-406" mainComp="false" Show_id="false" Show_Val="false" Pos="-1110,-340" rotation="0" hflip="1" vflip="1" label="Tunnel-406" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS2" IsBus="false" />
+<item itemtype="Connector" uid="connector-415" startpinid="Mega-1-33" endpinid="Tunnel-415-pin" pointList="380,-88,184,-88" />
 
-<item itemtype="Tunnel" CircId="Tunnel-407" mainComp="false" Show_id="false" Show_Val="false" Pos="-90,-420" rotation="0" hflip="1" vflip="1" label="Tunnel-407" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS2" IsBus="false" />
+<item itemtype="Connector" uid="connector-416" startpinid="Max72xx_matrix-404PinSck" endpinid="Tunnel-416-pin" pointList="-742,716,-788,716" />
 
-<item itemtype="Max72xx_matrix" CircId="Max72xx_matrix-402" mainComp="false" Show_id="false" Show_Val="false" Pos="-1150,-280" rotation="0" hflip="1" vflip="1" label="Max72xx_matrix-402" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Red" NumDisplays="2" />
+<item itemtype="Connector" uid="connector-417" startpinid="Max72xx_matrix-404PinDin" endpinid="Tunnel-417-pin" pointList="-734,716,-776,716" />
 
-<item itemtype="Tunnel" CircId="Tunnel-408" mainComp="false" Show_id="false" Show_Val="false" Pos="-1260,-180" rotation="0" hflip="1" vflip="1" label="Tunnel-408" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_SCK" IsBus="false" />
+<item itemtype="Connector" uid="connector-419" startpinid="Mega-1-35" endpinid="Tunnel-419-pin" pointList="388,-88,184,-88,184,-60" />
 
-<item itemtype="Tunnel" CircId="Tunnel-409" mainComp="false" Show_id="false" Show_Val="false" Pos="-1220,-172" rotation="0" hflip="1" vflip="1" label="Tunnel-409" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_DIN" IsBus="false" />
+<item itemtype="Connector" uid="connector-420" startpinid="Max72xx_matrix-405PinSck" endpinid="Tunnel-420-pin" pointList="-742,804,-788,804" />
 
-<item itemtype="Tunnel" CircId="Tunnel-410" mainComp="false" Show_id="false" Show_Val="false" Pos="-1110,-180" rotation="0" hflip="1" vflip="1" label="Tunnel-410" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS3" IsBus="false" />
+<item itemtype="Connector" uid="connector-421" startpinid="Max72xx_matrix-405PinDin" endpinid="Tunnel-421-pin" pointList="-734,804,-776,804" />
 
-<item itemtype="Tunnel" CircId="Tunnel-411" mainComp="false" Show_id="false" Show_Val="false" Pos="-90,-260" rotation="0" hflip="1" vflip="1" label="Tunnel-411" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS3" IsBus="false" />
+<item itemtype="Connector" uid="connector-423" startpinid="Mega-1-37" endpinid="Tunnel-423-pin" pointList="396,-88,184,-88,184,-28" />
 
-<item itemtype="Max72xx_matrix" CircId="Max72xx_matrix-403" mainComp="false" Show_id="false" Show_Val="false" Pos="-1150,-120" rotation="0" hflip="1" vflip="1" label="Max72xx_matrix-403" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Red" NumDisplays="2" />
+<item itemtype="Connector" uid="connector-424" startpinid="Mega-1-23" endpinid="Tunnel-424-pin" pointList="340,-88,340,208" />
 
-<item itemtype="Tunnel" CircId="Tunnel-412" mainComp="false" Show_id="false" Show_Val="false" Pos="-1260,-20" rotation="0" hflip="1" vflip="1" label="Tunnel-412" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_SCK" IsBus="false" />
+<item itemtype="Connector" uid="connector-425" startpinid="Mega-1-25" endpinid="Tunnel-425-pin" pointList="348,-88,348,232,340,232" />
 
-<item itemtype="Tunnel" CircId="Tunnel-413" mainComp="false" Show_id="false" Show_Val="false" Pos="-1220,-12" rotation="0" hflip="1" vflip="1" label="Tunnel-413" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_DIN" IsBus="false" />
+<item itemtype="Connector" uid="connector-426" startpinid="Push-30-pinP0" endpinid="Tunnel-426-pin" pointList="-716,110,-772,110,-772,112" />
 
-<item itemtype="Tunnel" CircId="Tunnel-414" mainComp="false" Show_id="false" Show_Val="false" Pos="-1110,-20" rotation="0" hflip="1" vflip="1" label="Tunnel-414" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS4" IsBus="false" />
+<item itemtype="Connector" uid="connector-427" startpinid="Push-30-switch0pinN" endpinid="Tunnel-427-pin" pointList="-684,110,-628,110,-628,112" />
 
-<item itemtype="Tunnel" CircId="Tunnel-415" mainComp="false" Show_id="false" Show_Val="false" Pos="-90,-100" rotation="0" hflip="1" vflip="1" label="Tunnel-415" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS4" IsBus="false" />
+<item itemtype="Connector" uid="connector-402" startpinid="Max72xx_matrix-400PinCS" endpinid="Tunnel-402-pin" pointList="-726,452,-768,452" />
 
-<item itemtype="Max72xx_matrix" CircId="Max72xx_matrix-404" mainComp="false" Show_id="false" Show_Val="false" Pos="-1150,40" rotation="0" hflip="1" vflip="1" label="Max72xx_matrix-404" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Red" NumDisplays="2" />
+<item itemtype="Connector" uid="Connector-428" startpinid="Max72xx_matrix-402PinCS" endpinid="Tunnel-429-pin" pointList="-726,364,-768,364" />
 
-<item itemtype="Tunnel" CircId="Tunnel-416" mainComp="false" Show_id="false" Show_Val="false" Pos="-1260,140" rotation="0" hflip="1" vflip="1" label="Tunnel-416" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_SCK" IsBus="false" />
+<item itemtype="Connector" uid="Connector-429" startpinid="Max72xx_matrix-401PinCS" endpinid="Tunnel-430-pin" pointList="-726,540,-768,540" />
 
-<item itemtype="Tunnel" CircId="Tunnel-417" mainComp="false" Show_id="false" Show_Val="false" Pos="-1220,148" rotation="0" hflip="1" vflip="1" label="Tunnel-417" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_DIN" IsBus="false" />
+<item itemtype="Connector" uid="Connector-430" startpinid="Max72xx_matrix-403PinCS" endpinid="Tunnel-431-pin" pointList="-726,628,-768,628" />
 
-<item itemtype="Tunnel" CircId="Tunnel-418" mainComp="false" Show_id="false" Show_Val="false" Pos="-1110,140" rotation="0" hflip="1" vflip="1" label="Tunnel-418" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS5" IsBus="false" />
+<item itemtype="Connector" uid="Connector-431" startpinid="Tunnel-432-pin" endpinid="Max72xx_matrix-404PinCS" pointList="-766,716,-724,716" />
 
-<item itemtype="Tunnel" CircId="Tunnel-419" mainComp="false" Show_id="false" Show_Val="false" Pos="-90,60" rotation="0" hflip="1" vflip="1" label="Tunnel-419" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS5" IsBus="false" />
-
-<item itemtype="Max72xx_matrix" CircId="Max72xx_matrix-405" mainComp="false" Show_id="false" Show_Val="false" Pos="-1150,200" rotation="0" hflip="1" vflip="1" label="Max72xx_matrix-405" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Red" NumDisplays="2" />
-
-<item itemtype="Tunnel" CircId="Tunnel-420" mainComp="false" Show_id="false" Show_Val="false" Pos="-1260,300" rotation="0" hflip="1" vflip="1" label="Tunnel-420" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_SCK" IsBus="false" />
-
-<item itemtype="Tunnel" CircId="Tunnel-421" mainComp="false" Show_id="false" Show_Val="false" Pos="-1220,308" rotation="0" hflip="1" vflip="1" label="Tunnel-421" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_DIN" IsBus="false" />
-
-<item itemtype="Tunnel" CircId="Tunnel-422" mainComp="false" Show_id="false" Show_Val="false" Pos="-1110,300" rotation="0" hflip="1" vflip="1" label="Tunnel-422" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS6" IsBus="false" />
-
-<item itemtype="Tunnel" CircId="Tunnel-423" mainComp="false" Show_id="false" Show_Val="false" Pos="-90,220" rotation="0" hflip="1" vflip="1" label="Tunnel-423" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_CS6" IsBus="false" />
-
-<item itemtype="Tunnel" CircId="Tunnel-424" mainComp="false" Show_id="false" Show_Val="false" Pos="-90,380" rotation="0" hflip="1" vflip="1" label="Tunnel-424" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_DIN" IsBus="false" />
-
-<item itemtype="Tunnel" CircId="Tunnel-425" mainComp="false" Show_id="false" Show_Val="false" Pos="-90,406" rotation="0" hflip="1" vflip="1" label="Tunnel-425" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MAX_SCK" IsBus="false" />
-
-<item itemtype="Push" CircId="Push-30" mainComp="false" Show_id="false" Show_Val="false" Pos="-700,110" rotation="0" hflip="1" vflip="1" label="Push-30" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1" />
-
-<item itemtype="Tunnel" CircId="Tunnel-426" mainComp="false" Show_id="false" Show_Val="false" Pos="-772,110" rotation="0" hflip="1" vflip="1" label="Tunnel-426" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="SENS_PASO" IsBus="false" />
-
-<item itemtype="Tunnel" CircId="Tunnel-427" mainComp="false" Show_id="false" Show_Val="false" Pos="-628,110" rotation="0" hflip="1" vflip="1" label="Tunnel-427" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="GND" IsBus="false" />
-
-<item itemtype="Connector" uid="connector-400" startpinid="Max72xx_matrix-400PinSck" endpinid="Tunnel-400-pin" pointList="-1178,-548,-1178,-500,-1260,-500" />
-
-<item itemtype="Connector" uid="connector-401" startpinid="Max72xx_matrix-400PinDin" endpinid="Tunnel-401-pin" pointList="-1170,-548,-1170,-492,-1220,-492" />
-
-<item itemtype="Connector" uid="connector-402" startpinid="Max72xx_matrix-400PinCS" endpinid="Tunnel-402-pin" pointList="-1162,-548,-1162,-500,-1110,-500" />
-
-<item itemtype="Connector" uid="connector-403" startpinid="Mega-1-27" endpinid="Tunnel-403-pin" pointList="-42,-580,-90,-580" />
-
-<item itemtype="Connector" uid="connector-404" startpinid="Max72xx_matrix-401PinSck" endpinid="Tunnel-404-pin" pointList="-1178,-388,-1178,-340,-1260,-340" />
-
-<item itemtype="Connector" uid="connector-405" startpinid="Max72xx_matrix-401PinDin" endpinid="Tunnel-405-pin" pointList="-1170,-388,-1170,-332,-1220,-332" />
-
-<item itemtype="Connector" uid="connector-406" startpinid="Max72xx_matrix-401PinCS" endpinid="Tunnel-406-pin" pointList="-1162,-388,-1162,-340,-1110,-340" />
-
-<item itemtype="Connector" uid="connector-407" startpinid="Mega-1-29" endpinid="Tunnel-407-pin" pointList="-42,-420,-90,-420" />
-
-<item itemtype="Connector" uid="connector-408" startpinid="Max72xx_matrix-402PinSck" endpinid="Tunnel-408-pin" pointList="-1178,-228,-1178,-180,-1260,-180" />
-
-<item itemtype="Connector" uid="connector-409" startpinid="Max72xx_matrix-402PinDin" endpinid="Tunnel-409-pin" pointList="-1170,-228,-1170,-172,-1220,-172" />
-
-<item itemtype="Connector" uid="connector-410" startpinid="Max72xx_matrix-402PinCS" endpinid="Tunnel-410-pin" pointList="-1162,-228,-1162,-180,-1110,-180" />
-
-<item itemtype="Connector" uid="connector-411" startpinid="Mega-1-31" endpinid="Tunnel-411-pin" pointList="-42,-260,-90,-260" />
-
-<item itemtype="Connector" uid="connector-412" startpinid="Max72xx_matrix-403PinSck" endpinid="Tunnel-412-pin" pointList="-1178,-68,-1178,-20,-1260,-20" />
-
-<item itemtype="Connector" uid="connector-413" startpinid="Max72xx_matrix-403PinDin" endpinid="Tunnel-413-pin" pointList="-1170,-68,-1170,-12,-1220,-12" />
-
-<item itemtype="Connector" uid="connector-414" startpinid="Max72xx_matrix-403PinCS" endpinid="Tunnel-414-pin" pointList="-1162,-68,-1162,-20,-1110,-20" />
-
-<item itemtype="Connector" uid="connector-415" startpinid="Mega-1-33" endpinid="Tunnel-415-pin" pointList="-42,-100,-90,-100" />
-
-<item itemtype="Connector" uid="connector-416" startpinid="Max72xx_matrix-404PinSck" endpinid="Tunnel-416-pin" pointList="-1178,92,-1178,140,-1260,140" />
-
-<item itemtype="Connector" uid="connector-417" startpinid="Max72xx_matrix-404PinDin" endpinid="Tunnel-417-pin" pointList="-1170,92,-1170,148,-1220,148" />
-
-<item itemtype="Connector" uid="connector-418" startpinid="Max72xx_matrix-404PinCS" endpinid="Tunnel-418-pin" pointList="-1162,92,-1162,140,-1110,140" />
-
-<item itemtype="Connector" uid="connector-419" startpinid="Mega-1-35" endpinid="Tunnel-419-pin" pointList="-42,60,-90,60" />
-
-<item itemtype="Connector" uid="connector-420" startpinid="Max72xx_matrix-405PinSck" endpinid="Tunnel-420-pin" pointList="-1178,252,-1178,300,-1260,300" />
-
-<item itemtype="Connector" uid="connector-421" startpinid="Max72xx_matrix-405PinDin" endpinid="Tunnel-421-pin" pointList="-1170,252,-1170,308,-1220,308" />
-
-<item itemtype="Connector" uid="connector-422" startpinid="Max72xx_matrix-405PinCS" endpinid="Tunnel-422-pin" pointList="-1162,252,-1162,300,-1110,300" />
-
-<item itemtype="Connector" uid="connector-423" startpinid="Mega-1-37" endpinid="Tunnel-423-pin" pointList="-42,220,-90,220" />
-
-<item itemtype="Connector" uid="connector-424" startpinid="Mega-1-23" endpinid="Tunnel-424-pin" pointList="-42,380,-90,380" />
-
-<item itemtype="Connector" uid="connector-425" startpinid="Mega-1-25" endpinid="Tunnel-425-pin" pointList="-42,406,-90,406" />
-
-<item itemtype="Connector" uid="connector-426" startpinid="Push-30-pinP0" endpinid="Tunnel-426-pin" pointList="-716,110,-772,110" />
-
-<item itemtype="Connector" uid="connector-427" startpinid="Push-30-switch0pinN" endpinid="Tunnel-427-pin" pointList="-684,110,-628,110" />
+<item itemtype="Connector" uid="Connector-432" startpinid="Tunnel-433-pin" endpinid="Max72xx_matrix-405PinCS" pointList="-766,804,-724,804" />
 
 </circuit>
