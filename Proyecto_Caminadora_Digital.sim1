@@ -134,11 +134,11 @@
 
 <item itemtype="Tunnel" CircId="Tunnel-101" mainComp="false" Show_id="false" Show_Val="false" Pos="-380,136" rotation="0" hflip="-1" vflip="1" label="Tunnel-101" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="GND" IsBus="false" />
 
-<item itemtype="DcMotor" CircId="DcMotor-15" mainComp="false" Show_id="false" Show_Val="false" Pos="-68,196" rotation="0" hflip="1" vflip="1" label="DcMotor-15" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" RPM_Nominal="60 _RPM" Volt_Nominal="5 V" Resistance="500 Ω" />
+<item itemtype="DcMotor" CircId="DcMotor-15" mainComp="false" Show_id="false" Show_Val="false" Pos="-76,172" rotation="0" hflip="1" vflip="1" label="DcMotor-15" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" RPM_Nominal="60 _RPM" Volt_Nominal="5 V" Resistance="500 Ω" />
 
-<item itemtype="Tunnel" CircId="Tunnel-102" mainComp="false" Show_id="false" Show_Val="false" Pos="-104,196" rotation="0" hflip="1" vflip="1" label="Tunnel-102" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MOT_PWM" IsBus="false" />
+<item itemtype="Tunnel" CircId="Tunnel-102" mainComp="false" Show_id="false" Show_Val="false" Pos="-112,172" rotation="0" hflip="1" vflip="1" label="Tunnel-102" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="MOT_PWM" IsBus="false" />
 
-<item itemtype="Tunnel" CircId="Tunnel-103" mainComp="false" Show_id="false" Show_Val="false" Pos="-32,196" rotation="0" hflip="-1" vflip="-1" label="Tunnel-103" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="GND" IsBus="false" />
+<item itemtype="Tunnel" CircId="Tunnel-103" mainComp="false" Show_id="false" Show_Val="false" Pos="-40,172" rotation="0" hflip="-1" vflip="-1" label="Tunnel-103" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="GND" IsBus="false" />
 
 <item itemtype="Servo" CircId="Servo-16" mainComp="false" Show_id="false" Show_Val="false" Pos="-92,16" rotation="0" hflip="1" vflip="1" label="Servo-16" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Speed="0.2 _s/60º" MinPulse="1000 _µs" MaxPulse="2000 _µs" Input_High_V="2.5 V" Input_Low_V="2.5 V" Input_Imped="1000 MΩ" />
 
@@ -178,7 +178,7 @@
 
 <item itemtype="Tunnel" CircId="Tunnel-115" mainComp="false" Show_id="false" Show_Val="false" Pos="-72,-116" rotation="0" hflip="1" vflip="1" label="Tunnel-115" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="GND" IsBus="false" />
 
-<item itemtype="Fixed Voltage" CircId="Fixed Voltage-32" mainComp="false" Show_id="true" Show_Val="false" Pos="-388,92" rotation="0" hflip="1" vflip="1" label="⏻" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Voltage="5 V" Out="false" />
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-32" mainComp="false" Show_id="true" Show_Val="false" Pos="-388,92" rotation="0" hflip="1" vflip="1" label="⏻" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Voltage="5 V" Out="true" />
 
 <item itemtype="Tunnel" CircId="Tunnel-116" mainComp="false" Show_id="false" Show_Val="false" Pos="-376,92" rotation="0" hflip="-1" vflip="1" label="Tunnel-116" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="V5" IsBus="false" />
 
@@ -226,7 +226,7 @@
 
 <item itemtype="Tunnel" CircId="Tunnel-135" mainComp="false" Show_id="false" Show_Val="false" Pos="374,-58" rotation="-90" hflip="1" vflip="1" label="Tunnel-135" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="LCD3_E" IsBus="false" />
 
-<item itemtype="Image" CircId="216" mainComp="false" Show_id="false" Show_Val="false" Pos="-428.299,24" rotation="0" hflip="1" vflip="1" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" H_size="700 _px" V_size="300 _px" Border="2 _px" Z_Value="-1" Color="#a0a0a4" Opacity="1" Image_File="../../../Downloads/Gemini_Generated_Image_pvxryapvxryapvxr.png" />
+<item itemtype="Image" CircId="216" mainComp="false" Show_id="false" Show_Val="false" Pos="-428.299,24" rotation="0" hflip="1" vflip="1" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" H_size="700 _px" V_size="300 _px" Border="2 _px" Z_Value="-1" Color="#a0a0a4" Opacity="1" Image_File="src/Gemini_Generated_Image_pvxryapvxryapvxr.png" />
 
 <item itemtype="Tunnel" CircId="Tunnel-222" mainComp="false" Show_id="false" Show_Val="false" Pos="200,44" rotation="0" hflip="1" vflip="1" label="Tunnel-222" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="V5" IsBus="false" />
 
@@ -302,9 +302,9 @@
 
 <item itemtype="Connector" uid="connector-61" startpinid="Switch-7-pinP0" endpinid="Tunnel-100-pin" pointList="-408,136,-404,136" />
 
-<item itemtype="Connector" uid="connector-63" startpinid="DcMotor-15-lPin" endpinid="Tunnel-102-pin" pointList="-108,196,-104,196" />
+<item itemtype="Connector" uid="connector-63" startpinid="DcMotor-15-lPin" endpinid="Tunnel-102-pin" pointList="-116,172,-112,172" />
 
-<item itemtype="Connector" uid="connector-64" startpinid="DcMotor-15-rPin" endpinid="Tunnel-103-pin" pointList="-28,196,-32,196" />
+<item itemtype="Connector" uid="connector-64" startpinid="DcMotor-15-rPin" endpinid="Tunnel-103-pin" pointList="-36,172,-40,172" />
 
 <item itemtype="Connector" uid="connector-65" startpinid="Servo-16-in0" endpinid="Tunnel-104-pin" pointList="-140,0,-136,0" />
 
